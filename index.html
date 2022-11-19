@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Mobiliarious</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link href="./styles/style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link href="./styles/style.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+  <div class="container">
+
+    <main>
+
+      <br>
+
+      <div class="text-center">
+
+        <img class="d-block mx-auto mb-4" src="./images/arquitectura.png" alt="" width="120" height="100">
+        <h2>Mobiliarious Prediction</h2>
+        <p class="lead">Complete the following form to obtain a prediction of the final price of your home</p>
+
+      </div>
+
+      <div class="row g-5">
+
+        <div class="col-md-5 col-lg-4 order-md-last">
+
+          <br><br>
+
+          <img class="d-block mx-auto mb-4" src="./images/const.png" alt="" width="300" height="350">
+
+          <form class="card p-2 border-0" style="background-color: transparent" onsubmit="return false">
+
+            <button type="submit" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#modal"
+              style="width:250px" id="submit_button">predict price</button>
+
+          </form>
+
+          <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+
+                  <h5 class="modal-title">Prediction</h5>
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                  <p id="pred"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+
+          <h4 class="mb-3">Requirements</h4>
+
+          <form onsubmit="return false">
+
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label class="form-label">Bedrooms</label>
+                <input type="number" class="form-control" id="i1" placeholder="1,2,3" min=1 required>
+                <div class="invalid-feedback">
+                  Valid number of bedrooms is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Bathrooms</label>
+                <input type="text" class="form-control" id="i2" placeholder="1,2,3" min=1 required>
+                <div class="invalid-feedback">
+                  Valid number of bathrooms is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6">
+                <label class="form-label">Sqft_living</label>
+                <input type="number" class="form-control" id="i3" placeholder="1340,1350,1360" min=1 required>
+                <div class="invalid-feedback">
+                  Valid Sqft_living value is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Sqft_lot</label>
+                <input type="number" class="form-control" id="i4" placeholder="1972,5621,3621" min=1 required>
+                <div class="invalid-feedback">
+                  Valid Sqft_lot value is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6">
+                <label class="form-label">Floors</label>
+                <input type="number" class="form-control" id="i5" placeholder="1,2,3" min=1 required>
+                <div class="invalid-feedback">
+                  Valid number of floors is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Waterfront</label>
+                <input type="number" class="form-control" id="i6" placeholder="0,1" min=0 required>
+                <div class="invalid-feedback">
+                  Valid waterfront value is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6">
+                <label class="form-label">View</label>
+                <input type="number" class="form-control" id="i7" placeholder="0,1,4" min=0 required>
+                <div class="invalid-feedback">
+                  Valid view value is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Condition</label>
+                <input type="number" class="form-control" id="i8" placeholder="0,1,2" min=0 required>
+                <div class="invalid-feedback">
+                  Valid condition value is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6">
+                <label class="form-label">Sqft_above</label>
+                <input type="number" class="form-control" id="i9" placeholder="1000,1400,1250" min=1 required>
+                <div class="invalid-feedback">
+                  Valid Sqft_above value is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Sqft_basement</label>
+                <input type="number" class="form-control" id="i10" placeholder="0,650,400" min=0 required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6">
+                <label class="form-label">Yr_built</label>
+                <input type="number" class="form-control" id="i11" placeholder="1975,1999,2020" min=1 required>
+                <div class="invalid-feedback">
+                  Valid Yr_built is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label class="form-label">Yr_renovated</label>
+                <input type="number" class="form-control" id="i12" placeholder="1975,1999,2020" min=1900 required>
+                <div class="invalid-feedback">
+                  Valid Yr_renovated is required.
+                </div>
+              </div>
+
+              <br>
+
+              <div class="col-sm-6 mx-auto">
+
+                <label class="form-label">City</label>
+
+                <div class="form-group">
+
+                  <select class="form-control text-center" id="i13">
+                    <option value=Seattle>Seattle</option>
+                    <option value=Renton>Renton</option>
+                    <option value=Bellevue>Bellevue</option>
+                    <option value=Redmond>Redmond</option>
+                    <option value=Kirkland>Kirkland</option>
+                    <option value=Shoreline>Shoreline</option>
+                  </select>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </form>
+
+          <br>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  <script src="./scripts/app.js"></script>
+
+
+</body>
+
+</html>
